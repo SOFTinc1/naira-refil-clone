@@ -50,8 +50,9 @@ export default function Home(props) {
               </div>
             </form>
           </div>
-          <div>
-            <Image src={BannerImg} className={styles.bannerImg} />
+          <div className={styles.bannerImg}>
+            {/* <Image src={BannerImg} className={styles.bannerImg} /> */}
+            <p className={styles.bannerImgP}>Nairarefill- The Business Networking Platform</p>
           </div>
         </div>
       </main>
