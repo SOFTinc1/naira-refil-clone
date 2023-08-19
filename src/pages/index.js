@@ -1,9 +1,12 @@
 import Head from "next/head";
 import styles from "@/styles/Home.module.css";
+import Image from "next/image";
 
+import User from "../../public/icon/user.svg";
+import BannerImg from "../../public/static/banner.jpg";
+import Link from "next/link";
 
 export default function Home(props) {
-
   return (
     <>
       <Head>
@@ -13,7 +16,44 @@ export default function Home(props) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <h1>new App</h1>
+        <div className={styles.header}>
+          <h1 className={styles.logo}>
+            naira<span className={styles.logoOrange}>refill</span>
+          </h1>
+          <div className={styles.btnDiv}>
+            <button className={styles.btnDiv1}>
+              <Image src={User} className={styles.regImg} />
+              <h2 className={styles.btn1Text}>register</h2>
+            </button>
+            <button className={styles.btnDiv2}>login</button>
+          </div>
+        </div>
+
+        <div className={styles.bodyDiv}>
+          <div className={styles.bodyDivDetails}>
+            <h1>We've Missed You</h1>
+            <p>
+              Kindly signin and get first access to the very best, community and
+              unlock more opportunities.
+            </p>
+            <form>
+              <label className={styles.label}>email</label>
+              <input type="email" className={styles.input}/>
+
+              <label className={styles.label}>password</label>
+              <input type="password" className={styles.input}/>
+
+              <button className={styles.loginBtn}>login</button>
+              <a href="/" className={styles.link}>forgot username or password</a>
+              <div className={styles.linkDiv}>
+              <p className={styles.linkText}>dont have an account?</p> <a className={styles.link2}>signup</a>
+              </div>
+            </form>
+          </div>
+          <div>
+            <Image src={BannerImg} className={styles.bannerImg} />
+          </div>
+        </div>
       </main>
     </>
   );
